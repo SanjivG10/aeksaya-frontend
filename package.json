@@ -6,8 +6,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky install",
-    "test": "echo hello World"
+    "lint-staged": "lint-staged"
   },
   "dependencies": {
     "next": "12.0.4",
@@ -19,8 +18,13 @@
     "@types/react": "17.0.35",
     "eslint": "7",
     "eslint-config-next": "12.0.4",
+    "husky": "^7.0.0",
+    "lint-staged": ">=10",
     "sass": "^1.43.4",
-    "typescript": "4.5.2",
-    "husky": "^7.0.0"
+    "typescript": "4.5.2"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": "eslint --cache --fix",
+    "src/**/*.{ts,tsx,scss}": "prettier --write ."
   }
 }
